@@ -28,79 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnIngreso = new System.Windows.Forms.Button();
+            this.btnVentas = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnBajas = new System.Windows.Forms.Button();
+            this.btnInventario = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnIngreso
             // 
-            this.button1.Location = new System.Drawing.Point(157, 123);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 42);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Ingreso de Uniformes";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnIngreso.Location = new System.Drawing.Point(157, 123);
+            this.btnIngreso.Name = "btnIngreso";
+            this.btnIngreso.Size = new System.Drawing.Size(75, 42);
+            this.btnIngreso.TabIndex = 0;
+            this.btnIngreso.Text = "Ingreso de Uniformes";
+            this.btnIngreso.UseVisualStyleBackColor = true;
+            this.btnIngreso.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnVentas
             // 
-            this.button2.Location = new System.Drawing.Point(157, 229);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Ventas";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnVentas.Location = new System.Drawing.Point(157, 229);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(75, 35);
+            this.btnVentas.TabIndex = 1;
+            this.btnVentas.Text = "Ventas";
+            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
-            // button3
+            // btnSalir
             // 
-            this.button3.Location = new System.Drawing.Point(283, 229);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 35);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Salir";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSalir.Location = new System.Drawing.Point(283, 229);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 35);
+            this.btnSalir.TabIndex = 2;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // button4
+            // btnBajas
             // 
-            this.button4.Location = new System.Drawing.Point(283, 123);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 42);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Bajas de Uniformes";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnBajas.Location = new System.Drawing.Point(283, 123);
+            this.btnBajas.Name = "btnBajas";
+            this.btnBajas.Size = new System.Drawing.Size(75, 42);
+            this.btnBajas.TabIndex = 3;
+            this.btnBajas.Text = "Bajas de Uniformes";
+            this.btnBajas.UseVisualStyleBackColor = true;
+            this.btnBajas.Click += new System.EventHandler(this.btnBajas_Click);
             // 
-            // button5
+            // btnInventario
             // 
-            this.button5.Location = new System.Drawing.Point(431, 123);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 42);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Inventario";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnInventario.Location = new System.Drawing.Point(431, 123);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Size = new System.Drawing.Size(75, 42);
+            this.btnInventario.TabIndex = 4;
+            this.btnInventario.Text = "Inventario";
+            this.btnInventario.UseVisualStyleBackColor = true;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
-            // button6
+            // btnRegresar
             // 
-            this.button6.Location = new System.Drawing.Point(431, 229);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 38);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Regresar ";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnRegresar.Location = new System.Drawing.Point(431, 229);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(75, 38);
+            this.btnRegresar.TabIndex = 5;
+            this.btnRegresar.Text = "Regresar ";
+            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // Menu_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnRegresar);
+            this.Controls.Add(this.btnInventario);
+            this.Controls.Add(this.btnBajas);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnVentas);
+            this.Controls.Add(this.btnIngreso);
             this.Name = "Menu_Admin";
             this.Text = "Menu_Admin";
             this.ResumeLayout(false);
@@ -109,11 +115,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnIngreso;
+        private System.Windows.Forms.Button btnVentas;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnBajas;
+        private System.Windows.Forms.Button btnInventario;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }
