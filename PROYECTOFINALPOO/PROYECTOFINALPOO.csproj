@@ -46,17 +46,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alumons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alumons.Designer.cs">
+      <DependentUpon>Alumons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Asitencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Asitencia.Designer.cs">
+      <DependentUpon>Asitencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bajas de Uniformes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bajas de Uniformes.Designer.cs">
       <DependentUpon>Bajas de Uniformes.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlNotas.Designer.cs">
+      <DependentUpon>ControlNotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioAlumnos.Designer.cs">
+      <DependentUpon>FormularioAlumnos.cs</DependentUpon>
     </Compile>
     <Compile Include="Ingreso de Uniformes.cs">
       <SubType>Form</SubType>
@@ -86,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioAlumnos.resx">
+      <DependentUpon>FormularioAlumnos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ingreso de Uniformes.resx">
       <DependentUpon>Ingreso de Uniformes.cs</DependentUpon>
