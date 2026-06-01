@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,5 +17,33 @@ namespace PROYECTOFINALPOO
         {
             InitializeComponent();
         }
+
+        private void btnEditarB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Bajas_de_Uniformes_Load(object sender, EventArgs e)
+        {
+           
+    
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.RoyalBlue;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 10, FontStyle.Bold);
+
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.RowHeadersVisible = false;
+        
+    }
     }
 }
