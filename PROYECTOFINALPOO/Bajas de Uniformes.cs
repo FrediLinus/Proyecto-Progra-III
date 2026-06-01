@@ -30,9 +30,7 @@ namespace PROYECTOFINALPOO
 
         private void Bajas_de_Uniformes_Load(object sender, EventArgs e)
         {
-           
-    
-
+             
             dataGridView1.EnableHeadersVisualStyles = false;
 
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.RoyalBlue;
@@ -42,8 +40,17 @@ namespace PROYECTOFINALPOO
                 new Font("Segoe UI", 10, FontStyle.Bold);
 
             dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.RowHeadersVisible = false;
-        
+            dataGridView1.RowHeadersVisible = false;        
     }
+
+        private void btnIngresarB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIngresarB_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
