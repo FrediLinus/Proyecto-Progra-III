@@ -16,5 +16,19 @@ namespace PROYECTOFINALPOO
         {
             InitializeComponent();
         }
+
+        private void Inventario_Load(object sender, EventArgs e)
+        {
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.RoyalBlue;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 10, FontStyle.Bold);
+
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.RowHeadersVisible = false;
+        }
     }
 }

@@ -28,16 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventario));
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cmbTallaV = new System.Windows.Forms.ComboBox();
-            this.cmbTipoV = new System.Windows.Forms.ComboBox();
-            this.btnActualizarI = new System.Windows.Forms.Button();
-            this.btnHistorial = new System.Windows.Forms.Button();
-            this.btnRegresar = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,15 +41,26 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbTallaV = new System.Windows.Forms.ComboBox();
+            this.cmbTipoV = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnIngresarB = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(74, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.Size = new System.Drawing.Size(46, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Buscar";
             // 
@@ -86,77 +91,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(671, 150);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Categoria";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(74, 159);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(30, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Talla";
-            // 
-            // cmbTallaV
-            // 
-            this.cmbTallaV.FormattingEnabled = true;
-            this.cmbTallaV.Items.AddRange(new object[] {
-            "XS",
-            "S",
-            "M",
-            "L",
-            "XL",
-            "XXL"});
-            this.cmbTallaV.Location = new System.Drawing.Point(200, 151);
-            this.cmbTallaV.Name = "cmbTallaV";
-            this.cmbTallaV.Size = new System.Drawing.Size(121, 21);
-            this.cmbTallaV.TabIndex = 27;
-            // 
-            // cmbTipoV
-            // 
-            this.cmbTipoV.FormattingEnabled = true;
-            this.cmbTipoV.Items.AddRange(new object[] {
-            "Hoddie Beige 001",
-            "Hoddie Blue  001"});
-            this.cmbTipoV.Location = new System.Drawing.Point(201, 103);
-            this.cmbTipoV.Name = "cmbTipoV";
-            this.cmbTipoV.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoV.TabIndex = 26;
-            // 
-            // btnActualizarI
-            // 
-            this.btnActualizarI.Location = new System.Drawing.Point(420, 51);
-            this.btnActualizarI.Name = "btnActualizarI";
-            this.btnActualizarI.Size = new System.Drawing.Size(94, 23);
-            this.btnActualizarI.TabIndex = 28;
-            this.btnActualizarI.Text = "Actualizar";
-            this.btnActualizarI.UseVisualStyleBackColor = true;
-            // 
-            // btnHistorial
-            // 
-            this.btnHistorial.Location = new System.Drawing.Point(420, 106);
-            this.btnHistorial.Name = "btnHistorial";
-            this.btnHistorial.Size = new System.Drawing.Size(94, 23);
-            this.btnHistorial.TabIndex = 29;
-            this.btnHistorial.Text = "Ver Historial";
-            this.btnHistorial.UseVisualStyleBackColor = true;
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Location = new System.Drawing.Point(582, 76);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(94, 23);
-            this.btnRegresar.TabIndex = 30;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = true;
             // 
             // Column1
             // 
@@ -212,14 +146,125 @@
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(74, 106);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Categoria";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(74, 159);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Talla";
+            // 
+            // cmbTallaV
+            // 
+            this.cmbTallaV.FormattingEnabled = true;
+            this.cmbTallaV.Items.AddRange(new object[] {
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"});
+            this.cmbTallaV.Location = new System.Drawing.Point(200, 151);
+            this.cmbTallaV.Name = "cmbTallaV";
+            this.cmbTallaV.Size = new System.Drawing.Size(121, 21);
+            this.cmbTallaV.TabIndex = 27;
+            // 
+            // cmbTipoV
+            // 
+            this.cmbTipoV.FormattingEnabled = true;
+            this.cmbTipoV.Items.AddRange(new object[] {
+            "Hoddie Beige 001",
+            "Hoddie Blue  001"});
+            this.cmbTipoV.Location = new System.Drawing.Point(201, 103);
+            this.cmbTipoV.Name = "cmbTipoV";
+            this.cmbTipoV.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoV.TabIndex = 26;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(436, 385);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(136, 37);
+            this.button2.TabIndex = 48;
+            this.button2.Text = " 🗑 Regresar";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Orange;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(294, 385);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 37);
+            this.button1.TabIndex = 47;
+            this.button1.Text = "✏️ Ver Historial";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // btnIngresarB
+            // 
+            this.btnIngresarB.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnIngresarB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIngresarB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresarB.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresarB.ForeColor = System.Drawing.Color.White;
+            this.btnIngresarB.Location = new System.Drawing.Point(152, 385);
+            this.btnIngresarB.Name = "btnIngresarB";
+            this.btnIngresarB.Size = new System.Drawing.Size(136, 37);
+            this.btnIngresarB.TabIndex = 46;
+            this.btnIngresarB.Text = "💾 Actualizar";
+            this.btnIngresarB.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(415, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(331, 180);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 49;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.label6.Location = new System.Drawing.Point(332, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 21);
+            this.label6.TabIndex = 50;
+            this.label6.Text = "INVENTARIO";
+            // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnRegresar);
-            this.Controls.Add(this.btnHistorial);
-            this.Controls.Add(this.btnActualizarI);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnIngresarB);
             this.Controls.Add(this.cmbTallaV);
             this.Controls.Add(this.cmbTipoV);
             this.Controls.Add(this.label3);
@@ -229,7 +274,9 @@
             this.Controls.Add(this.label1);
             this.Name = "Inventario";
             this.Text = "Inventario";
+            this.Load += new System.EventHandler(this.Inventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -244,7 +291,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbTallaV;
         private System.Windows.Forms.ComboBox cmbTipoV;
-        private System.Windows.Forms.Button btnActualizarI;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
@@ -254,7 +300,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.Button btnHistorial;
-        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnIngresarB;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label6;
     }
 }
