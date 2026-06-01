@@ -21,5 +21,16 @@ namespace PROYECTOFINALPOO
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            errorProvider1.Icon = new Icon(errorProvider1.Icon, new Size(16, 16));
+            if (validacion() == true)
+            {
+                FormularioMdi Formulario2 = new FormularioMdi();
+                Formulario2.Show();
+                this.Hide();
+            }
+        }
     }
 }
