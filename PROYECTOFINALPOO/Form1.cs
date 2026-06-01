@@ -28,9 +28,25 @@ namespace PROYECTOFINALPOO
             errorProvider1.Icon = new Icon(errorProvider1.Icon, new Size(16, 16));
             if (validacion() == true)
             {
-                Menu_Admin menuA = new Menu_Admin();
-                menuA.Show();
-                this.Hide();
+                if ((txtUsuario.Text == "admin") && (txtContra.Text == "admin123"))
+                {
+                    Menu_Admin menuA = new Menu_Admin();
+                    menuA.Show();
+                    this.Hide();
+                }
+
+                else if ((txtUsuario.Text == "empleado") && (txtContra.Text == "empleado123"))
+                {
+                    FormularioAlumnos menuA = new FormularioAlumnos();
+                    menuA.Show();
+                    this.Hide();
+                }
+
+                else
+                {
+                    MessageBox.Show("Usuario o Contraseña Incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
         }
 
