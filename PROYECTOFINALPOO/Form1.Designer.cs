@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.Nombre = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.txtContra = new System.Windows.Forms.TextBox();
+            this.btnIngrear = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.chbMirarContra = new System.Windows.Forms.CheckBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -56,12 +59,12 @@
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 1;
             // 
-            // textBox1
+            // txtUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(280, 147);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtUsuario.Location = new System.Drawing.Point(280, 147);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(100, 20);
+            this.txtUsuario.TabIndex = 2;
             // 
             // Nombre
             // 
@@ -82,58 +85,64 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Contraseña";
             // 
-            // textBox2
+            // txtContra
             // 
-            this.textBox2.Location = new System.Drawing.Point(280, 212);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtContra.Location = new System.Drawing.Point(280, 212);
+            this.txtContra.Name = "txtContra";
+            this.txtContra.Size = new System.Drawing.Size(100, 20);
+            this.txtContra.TabIndex = 5;
             // 
-            // button1
+            // btnIngrear
             // 
-            this.button1.Location = new System.Drawing.Point(552, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnIngrear.Location = new System.Drawing.Point(291, 259);
+            this.btnIngrear.Name = "btnIngrear";
+            this.btnIngrear.Size = new System.Drawing.Size(75, 23);
+            this.btnIngrear.TabIndex = 6;
+            this.btnIngrear.Text = "Ingresar";
+            this.btnIngrear.UseVisualStyleBackColor = true;
+            this.btnIngrear.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnSalir
             // 
-            this.button2.Location = new System.Drawing.Point(552, 210);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Salir";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnSalir.Location = new System.Drawing.Point(291, 319);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 7;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chbMirarContra
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(398, 214);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(117, 17);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Mostrar contraseña";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chbMirarContra.AutoSize = true;
+            this.chbMirarContra.Location = new System.Drawing.Point(398, 214);
+            this.chbMirarContra.Name = "chbMirarContra";
+            this.chbMirarContra.Size = new System.Drawing.Size(117, 17);
+            this.chbMirarContra.TabIndex = 8;
+            this.chbMirarContra.Text = "Mostrar contraseña";
+            this.chbMirarContra.UseVisualStyleBackColor = true;
+            this.chbMirarContra.CheckedChanged += new System.EventHandler(this.chbMirarContra_CheckedChanged);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.chbMirarContra);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnIngrear);
+            this.Controls.Add(this.txtContra);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Nombre);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,13 +152,14 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label Nombre;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox txtContra;
+        private System.Windows.Forms.Button btnIngrear;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.CheckBox chbMirarContra;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
