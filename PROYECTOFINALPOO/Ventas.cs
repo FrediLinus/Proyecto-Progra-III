@@ -60,6 +60,40 @@ namespace PROYECTOFINALPOO
             }
         }
 
+        // Validacion: solo numeros en identificacion
+        private void txtIdenV_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private bool ValidarCamposVenta()
+        {
+            if (string.IsNullOrWhiteSpace(cmbTipoV.Text) ||
+                string.IsNullOrWhiteSpace(cmbTallaV.Text) )
+            {
+                MessageBox.Show("Por favor seleccione tipo y talla.");
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool ValidarCamposVentaCliente()
+        {
+            if (string.IsNullOrWhiteSpace(txtEncarV.Text) ||
+                string.IsNullOrWhiteSpace(txtNomV.Text) ||
+                string.IsNullOrWhiteSpace(txtIdenV.Text))
+            {
+                MessageBox.Show("Por favor complete los datos del cliente.");
+                return false;
+            }
+
+            return true;
+        }
+
         private void cmbTallaV_SelectedIndexChanged(object sender, EventArgs e)
         {
             var producto = DatosSistema.Inventario.FirstOrDefault(x =>
@@ -80,6 +114,8 @@ namespace PROYECTOFINALPOO
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!ValidarCamposVenta()) return;
+
             var producto = DatosSistema.Inventario.FirstOrDefault(x =>
              x.TipoSueter == cmbTipoV.Text &&
              x.Talla == cmbTallaV.Text);
@@ -144,6 +180,7 @@ namespace PROYECTOFINALPOO
 
         private void btnVender_Click(object sender, EventArgs e)
         {
+            if (!ValidarCamposVentaCliente()) return;
             decimal total = 0;
 
             string recibo = "========== FUN ENGLISH ==========\n";

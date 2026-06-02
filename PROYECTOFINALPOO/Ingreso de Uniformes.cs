@@ -45,6 +45,7 @@ namespace PROYECTOFINALPOO
 
         private void btnIngresarB_Click(object sender, EventArgs e)
         {
+            if (!ValidarCamposIngreso()) return;
             Admin nuevo = new Admin();
 
             nuevo.Codigo = txtCodigo.Text;
@@ -96,6 +97,8 @@ namespace PROYECTOFINALPOO
                 return;
             }
 
+            if (!ValidarCamposIngreso()) return;
+
             DatosSistema.Inventario[indiceSeleccionado].Codigo =
                 txtCodigo.Text;
 
@@ -124,6 +127,22 @@ namespace PROYECTOFINALPOO
             indiceSeleccionado = -1;
         }
 
+        private bool ValidarCamposIngreso()
+        {
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text) ||
+                string.IsNullOrWhiteSpace(txtNomProv.Text) ||
+                string.IsNullOrWhiteSpace(cmbTipo.Text) ||
+                string.IsNullOrWhiteSpace(cmbTalla.Text) ||
+                string.IsNullOrWhiteSpace(txtPrecioCompra.Text) ||
+                string.IsNullOrWhiteSpace(txtPrecioVenta.Text))
+            {
+                MessageBox.Show("Por favor complete todos los campos.");
+                return false;
+            }
+
+            return true;
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             if (indiceSeleccionado == -1)
@@ -148,6 +167,29 @@ namespace PROYECTOFINALPOO
 
                 MessageBox.Show("Registro eliminado correctamente.");
             }
+        }
+
+        // Validaciones: aceptar solo numeros y un punto decimal
+        private void txtPrecioCompra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir control, digitos y un solo punto decimal
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != '.')
+            {
+                e.Handled = true;
+            }
+
+            // Permitir solo un punto
+            var text = ((TextBox)sender).Text;
+            if (e.KeyChar == '.' && text.Contains('.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Reutiliza la misma validación
+            txtPrecioCompra_KeyPress(sender, e);
         }
     }
     }

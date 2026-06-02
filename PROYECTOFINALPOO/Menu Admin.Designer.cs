@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu_Admin));
             this.btnIngreso = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
@@ -37,58 +38,70 @@
             // 
             // btnIngreso
             // 
-            this.btnIngreso.Location = new System.Drawing.Point(157, 123);
+            this.btnIngreso.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnIngreso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngreso.Location = new System.Drawing.Point(114, 78);
             this.btnIngreso.Name = "btnIngreso";
-            this.btnIngreso.Size = new System.Drawing.Size(75, 42);
+            this.btnIngreso.Size = new System.Drawing.Size(144, 72);
             this.btnIngreso.TabIndex = 0;
-            this.btnIngreso.Text = "Ingreso de Uniformes";
-            this.btnIngreso.UseVisualStyleBackColor = true;
+            this.btnIngreso.Text = "📦 Ingreso de Uniformes";
+            this.btnIngreso.UseVisualStyleBackColor = false;
             this.btnIngreso.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnVentas
             // 
-            this.btnVentas.Location = new System.Drawing.Point(157, 229);
+            this.btnVentas.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnVentas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.Location = new System.Drawing.Point(105, 229);
             this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Size = new System.Drawing.Size(75, 35);
+            this.btnVentas.Size = new System.Drawing.Size(144, 65);
             this.btnVentas.TabIndex = 1;
-            this.btnVentas.Text = "Ventas";
-            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Text = "🛒 Registrar Venta";
+            this.btnVentas.UseVisualStyleBackColor = false;
             this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(283, 229);
+            this.btnSalir.BackColor = System.Drawing.Color.Red;
+            this.btnSalir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(278, 345);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 35);
+            this.btnSalir.Size = new System.Drawing.Size(144, 65);
             this.btnSalir.TabIndex = 2;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Text = "❌ Salir del Sistema";
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnInventario
             // 
-            this.btnInventario.Location = new System.Drawing.Point(431, 123);
+            this.btnInventario.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnInventario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventario.Location = new System.Drawing.Point(444, 78);
             this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(75, 42);
+            this.btnInventario.Size = new System.Drawing.Size(144, 72);
             this.btnInventario.TabIndex = 4;
-            this.btnInventario.Text = "Inventario";
-            this.btnInventario.UseVisualStyleBackColor = true;
+            this.btnInventario.Text = "📋 Inventario General";
+            this.btnInventario.UseVisualStyleBackColor = false;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // btnRegresar
             // 
-            this.btnRegresar.Location = new System.Drawing.Point(431, 229);
+            this.btnRegresar.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.Location = new System.Drawing.Point(444, 229);
             this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(75, 38);
+            this.btnRegresar.Size = new System.Drawing.Size(144, 68);
             this.btnRegresar.TabIndex = 5;
-            this.btnRegresar.Text = "Regresar ";
-            this.btnRegresar.UseVisualStyleBackColor = true;
+            this.btnRegresar.Text = "🔙 Regresar al Menú";
+            this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // Menu_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnInventario);
