@@ -236,6 +236,7 @@
             this.txtIdenV.Name = "txtIdenV";
             this.txtIdenV.Size = new System.Drawing.Size(121, 20);
             this.txtIdenV.TabIndex = 33;
+            this.txtIdenV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdenV_KeyPress);
             // 
             // btnVender
             // 
