@@ -19,13 +19,6 @@ namespace PROYECTOFINALPOO
         }
         char ok = 'f'; int fila;
         string asistencia;
-        
-        private class StudentItem
-        {
-            public int Index { get; set; }
-            public string Nombre { get; set; }
-            public override string ToString() => Nombre;
-        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -48,24 +41,13 @@ namespace PROYECTOFINALPOO
             }
 
             var existente = ClaseAlumnos.ListaAlumnos[fila];
-            
-            if (cmbEstudiante.SelectedItem is StudentItem si)
-            {
-                var seleccionado = ClaseAlumnos.ListaAlumnos[si.Index];
-                if (string.IsNullOrEmpty(existente.Nombres)) existente.Nombres = seleccionado.Nombres;
-                if (string.IsNullOrEmpty(existente.Apellidos)) existente.Apellidos = seleccionado.Apellidos;
-            }
 
             if (string.IsNullOrEmpty(existente.Fecha))
                 existente.Fecha = date.Value.ToShortDateString();
-            
+
             if (string.IsNullOrEmpty(existente.Asistencia))
                 existente.Asistencia = asistencia;
             
-            dataGridView1.Rows[fila].Cells[0].Value = existente.Carrera;
-            dataGridView1.Rows[fila].Cells[1].Value = existente.Curso;
-            dataGridView1.Rows[fila].Cells[2].Value = existente.Nombres;
-            dataGridView1.Rows[fila].Cells[3].Value = existente.Apellidos;
             dataGridView1.Rows[fila].Cells[4].Value = existente.Fecha;
             dataGridView1.Rows[fila].Cells[5].Value = existente.Asistencia;
             ok = 'v';
@@ -78,48 +60,19 @@ namespace PROYECTOFINALPOO
 
             if (fila >= 0 && fila < ClaseAlumnos.ListaAlumnos.Count)
             {
-                var existente = ClaseAlumnos.ListaAlumnos[fila];
-                existente.Carrera = cmbCarrera.Text;
-                existente.Curso = cmbCurso.Text;
-                
-                if (cmbEstudiante.SelectedItem is StudentItem si)
-                {
-                    var seleccion = ClaseAlumnos.ListaAlumnos[si.Index];
-                    existente.Nombres = seleccion.Nombres;
-                    existente.Apellidos = seleccion.Apellidos;
-                }
-                
+                var existente = ClaseAlumnos.ListaAlumnos[fila];                
+
                 existente.Fecha = date.Value.ToShortDateString();
                 if (rbSi.Checked) existente.Asistencia = "Si";
                 else if (rbNo.Checked) existente.Asistencia = "No";
                 else if (rbPermiso.Checked) existente.Asistencia = "Permiso";
-                
-                dataGridView1.Rows[fila].Cells[0].Value = existente.Carrera;
-                dataGridView1.Rows[fila].Cells[1].Value = existente.Curso;
-                dataGridView1.Rows[fila].Cells[2].Value = existente.Nombres;
-                dataGridView1.Rows[fila].Cells[3].Value = existente.Apellidos;
+
                 dataGridView1.Rows[fila].Cells[4].Value = existente.Fecha;
                 dataGridView1.Rows[fila].Cells[5].Value = existente.Asistencia;
                 MessageBox.Show("Registro modificado", "Modificaion", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (ok == 'f')
-            {
-                MessageBox.Show("No hay registros");
-            }
-            else
-            {
-                if (fila >= 0 && fila < ClaseAlumnos.ListaAlumnos.Count)
-                {
-                    ClaseAlumnos.ListaAlumnos.RemoveAt(fila);
-                    dataGridView1.Rows.RemoveAt(fila);
-                }
-            }
-        }
+        }        
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
@@ -127,8 +80,17 @@ namespace PROYECTOFINALPOO
         }        
 
         private void Asitencia_Load(object sender, EventArgs e)
-        {            
-            UpdateCursosForCarrera();            
+        {
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.RoyalBlue;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 10, FontStyle.Bold);
+
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.RowHeadersVisible = false;
             for (int i = 0; i < ClaseAlumnos.ListaAlumnos.Count; i++)
             {
                 var a = ClaseAlumnos.ListaAlumnos[i];
@@ -137,56 +99,12 @@ namespace PROYECTOFINALPOO
             }
         }
 
-        private void UpdateCursosForCarrera()
-        {
-            cmbCurso.Items.Clear();
-            cmbEstudiante.Items.Clear();
-
-            if (cmbCarrera.Text == "4to Computacion" || cmbCarrera.Text == "5to Computacion")
-            {
-                cmbCurso.Items.Add("Programacion");
-                cmbCurso.Items.Add("Redes");
-                cmbCurso.Items.Add("Base de Datos");
-            }
-            else if (cmbCarrera.Text == "4to Dibujo" || cmbCarrera.Text == "5to Dibujo")
-            {
-                cmbCurso.Items.Add("Dibujo Tecnico");
-                cmbCurso.Items.Add("Maquetado");
-                cmbCurso.Items.Add("Matematica");
-            }
-            else if (cmbCarrera.Text == "4to Biologicas" || cmbCarrera.Text == "5to Biologicas")
-            {
-                cmbCurso.Items.Add("Biologia");
-                cmbCurso.Items.Add("Quimica");
-                cmbCurso.Items.Add("Fisica");
-            }            
-            var estudiantes = ClaseAlumnos.ListaAlumnos
-                .Select((a, idx) => new { a, idx })
-                .Where(x => x.a.Carrera == cmbCarrera.Text)
-                .ToList();
-
-            foreach (var entry in estudiantes)
-            {                
-                cmbEstudiante.Items.Add(new StudentItem { Index = entry.idx, Nombre = entry.a.Nombres });
-            }
-
-            if (cmbCurso.Items.Count > 0)
-                cmbCurso.SelectedIndex = 0;
-            if (cmbEstudiante.Items.Count > 0)
-                cmbEstudiante.SelectedIndex = 0;
-        }
-
-        private void cmbCarrera_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UpdateCursosForCarrera();
-        }
-
         private bool Validacion()
         {
-            errorProvider1.Clear();
-            if (string.IsNullOrEmpty(cmbEstudiante.Text))
+            errorProvider1.Clear();            
+            if (fila < 0 || fila >= ClaseAlumnos.ListaAlumnos.Count)
             {
-                errorProvider1.SetError(cmbEstudiante, "Seleccione un estudiante");
+                errorProvider1.SetError(dataGridView1, "Seleccione un registro de la tabla");
                 return false;
             }
             return true;
@@ -196,15 +114,24 @@ namespace PROYECTOFINALPOO
         {
             if (dataGridView1.Rows.Count > 0)
             {
-                fila = dataGridView1.CurrentRow.Index;
-                cmbCarrera.Text = dataGridView1.Rows[fila].Cells[0].Value.ToString();
-                UpdateCursosForCarrera();
-                cmbCurso.Text = dataGridView1.Rows[fila].Cells[1].Value.ToString();
-                cmbEstudiante.Text = dataGridView1.Rows[fila].Cells[2].Value.ToString();
-                var asistenciaVal = dataGridView1.Rows[fila].Cells[3].Value.ToString();
-                rbSi.Checked = asistenciaVal == "Si";
-                rbNo.Checked = asistenciaVal == "No";
-                rbPermiso.Checked = asistenciaVal == "Permiso";
+                fila = dataGridView1.CurrentRow.Index;                
+                var fechaVal = dataGridView1.Rows[fila].Cells[4].Value?.ToString();
+                if (DateTime.TryParse(fechaVal, out DateTime dt))
+                    date.Value = dt;                
+
+                var asistenciaVal = dataGridView1.Rows[fila].Cells[5].Value?.ToString() ?? string.Empty;
+                if (string.IsNullOrEmpty(asistenciaVal))
+                {                    
+                    rbSi.Checked = true;
+                    rbNo.Checked = false;
+                    rbPermiso.Checked = false;
+                }
+                else
+                {
+                    rbSi.Checked = asistenciaVal == "Si";
+                    rbNo.Checked = asistenciaVal == "No";
+                    rbPermiso.Checked = asistenciaVal == "Permiso";
+                }
             }
         }
     }

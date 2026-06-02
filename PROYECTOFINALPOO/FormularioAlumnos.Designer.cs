@@ -31,6 +31,7 @@
             this.btnAlumnos = new System.Windows.Forms.Button();
             this.btnAsistencia = new System.Windows.Forms.Button();
             this.btnNotas = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAlumnos
@@ -69,6 +70,21 @@
             this.btnNotas.UseVisualStyleBackColor = false;
             this.btnNotas.Click += new System.EventHandler(this.btnNotas_Click);
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.DimGray;
+            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.Location = new System.Drawing.Point(664, 12);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(124, 30);
+            this.btnRegresar.TabIndex = 76;
+            this.btnRegresar.Text = "⬅ Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // FormularioAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -76,6 +92,7 @@
             this.BackgroundImage = global::PROYECTOFINALPOO.Properties.Resources.logo_fun;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnNotas);
             this.Controls.Add(this.btnAsistencia);
             this.Controls.Add(this.btnAlumnos);
@@ -90,5 +107,6 @@
         private System.Windows.Forms.Button btnAlumnos;
         private System.Windows.Forms.Button btnAsistencia;
         private System.Windows.Forms.Button btnNotas;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

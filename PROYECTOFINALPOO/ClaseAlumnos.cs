@@ -19,8 +19,7 @@ namespace PROYECTOFINALPOO
         public string Asistencia { get; set; }
 
         public double Nota { get; set; }
-
-        // Individual note fields for ControlNotas
+        
         public double Nota1 { get; set; }
         public double Nota2 { get; set; }
         public double Nota3 { get; set; }
@@ -72,8 +71,7 @@ namespace PROYECTOFINALPOO
             if (!ListaAlumnos.Contains(this))
                 ListaAlumnos.Add(this);
         }
-
-        // Calculate average from the available Nota1..Nota4 values
+        
         public double CalcularPromedio()
         {
             var notas = new List<double>();

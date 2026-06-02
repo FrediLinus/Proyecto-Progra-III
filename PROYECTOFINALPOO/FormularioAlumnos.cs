@@ -34,5 +34,12 @@ namespace PROYECTOFINALPOO
             ControlNotas notas = new ControlNotas();
             notas.Show();
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Hide();
+        }
     }
 }
