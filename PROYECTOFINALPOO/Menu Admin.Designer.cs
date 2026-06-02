@@ -31,7 +31,6 @@
             this.btnIngreso = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnBajas = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -66,16 +65,6 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnBajas
-            // 
-            this.btnBajas.Location = new System.Drawing.Point(283, 123);
-            this.btnBajas.Name = "btnBajas";
-            this.btnBajas.Size = new System.Drawing.Size(75, 42);
-            this.btnBajas.TabIndex = 3;
-            this.btnBajas.Text = "Bajas de Uniformes";
-            this.btnBajas.UseVisualStyleBackColor = true;
-            this.btnBajas.Click += new System.EventHandler(this.btnBajas_Click);
-            // 
             // btnInventario
             // 
             this.btnInventario.Location = new System.Drawing.Point(431, 123);
@@ -103,12 +92,12 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnInventario);
-            this.Controls.Add(this.btnBajas);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnVentas);
             this.Controls.Add(this.btnIngreso);
             this.Name = "Menu_Admin";
             this.Text = "Menu_Admin";
+            this.Load += new System.EventHandler(this.Menu_Admin_Load);
             this.ResumeLayout(false);
 
         }
@@ -118,7 +107,6 @@
         private System.Windows.Forms.Button btnIngreso;
         private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnBajas;
         private System.Windows.Forms.Button btnInventario;
         private System.Windows.Forms.Button btnRegresar;
     }

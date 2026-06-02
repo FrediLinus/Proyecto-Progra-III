@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static PROYECTOFINALPOO.Admin;
+
 
 namespace PROYECTOFINALPOO
 {
@@ -16,9 +18,11 @@ namespace PROYECTOFINALPOO
         {
             InitializeComponent();
         }
-
+        private int indiceSeleccionado = -1;
         private void Inventario_Load(object sender, EventArgs e)
         {
+
+
             dataGridView1.EnableHeadersVisualStyles = false;
 
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.RoyalBlue;
@@ -29,6 +33,65 @@ namespace PROYECTOFINALPOO
 
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.RowHeadersVisible = false;
+
+            CargarInventario();
+
+
+        }
+
+        private void CargarInventario()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = DatosSistema.Inventario;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                indiceSeleccionado = e.RowIndex;
+            }
+        }
+
+        private void btnIngresarB_Click(object sender, EventArgs e)
+        {
+            CargarInventario();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (indiceSeleccionado == -1)
+            {
+                MessageBox.Show("Seleccione un registro.");
+                return;
+            }
+
+            DialogResult respuesta = MessageBox.Show(
+                "¿Desea eliminar este uniforme del inventario?",
+                "Confirmar eliminación",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (respuesta == DialogResult.Yes)
+            {
+                DatosSistema.Inventario.RemoveAt(indiceSeleccionado);
+
+                CargarInventario();
+
+                indiceSeleccionado = -1;
+
+                MessageBox.Show("Registro eliminado correctamente.");
+            }
         }
     }
-}
+        
+    }
+

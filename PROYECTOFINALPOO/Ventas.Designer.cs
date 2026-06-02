@@ -31,6 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Ventas));
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cmbTallaV = new System.Windows.Forms.ComboBox();
             this.npCantidadV = new System.Windows.Forms.NumericUpDown();
             this.cmbTipoV = new System.Windows.Forms.ComboBox();
@@ -47,16 +53,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblStock = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -92,6 +92,42 @@
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Código";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Producto";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Talla";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Cantidad";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Precio Unitario";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Subtotal";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // cmbTallaV
             // 
             this.cmbTallaV.FormattingEnabled = true;
@@ -106,6 +142,7 @@
             this.cmbTallaV.Name = "cmbTallaV";
             this.cmbTallaV.Size = new System.Drawing.Size(121, 21);
             this.cmbTallaV.TabIndex = 25;
+            this.cmbTallaV.SelectedIndexChanged += new System.EventHandler(this.cmbTallaV_SelectedIndexChanged);
             // 
             // npCantidadV
             // 
@@ -213,6 +250,7 @@
             this.btnVender.TabIndex = 48;
             this.btnVender.Text = "🛒 Vender";
             this.btnVender.UseVisualStyleBackColor = false;
+            this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
             // pictureBox1
             // 
@@ -237,6 +275,7 @@
             this.button2.TabIndex = 50;
             this.button2.Text = " 🗑 Eliminar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label8
             // 
@@ -247,24 +286,25 @@
             this.label8.TabIndex = 51;
             this.label8.Text = "Stock Disponibl";
             // 
-            // label9
+            // lblStock
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(487, 130);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(22, 13);
-            this.label9.TabIndex = 52;
-            this.label9.Text = "-----";
+            this.lblStock.AutoSize = true;
+            this.lblStock.Location = new System.Drawing.Point(487, 130);
+            this.lblStock.Name = "lblStock";
+            this.lblStock.Size = new System.Drawing.Size(22, 13);
+            this.lblStock.TabIndex = 52;
+            this.lblStock.Text = "-----";
+            this.lblStock.Click += new System.EventHandler(this.label9_Click);
             // 
-            // label10
+            // lblPrecio
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(487, 158);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(22, 13);
-            this.label10.TabIndex = 54;
-            this.label10.Text = "-----";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(487, 158);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(22, 13);
+            this.lblPrecio.TabIndex = 54;
+            this.lblPrecio.Text = "-----";
+            this.lblPrecio.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -288,42 +328,7 @@
             this.button1.TabIndex = 55;
             this.button1.Text = "➕ Agregar";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Código";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Producto";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Talla";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Cantidad";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Precio Unitario";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Subtotal";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button4
             // 
@@ -338,6 +343,7 @@
             this.button4.TabIndex = 57;
             this.button4.Text = "✏️ Modificar";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -361,9 +367,9 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblPrecio);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblStock);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
@@ -413,8 +419,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblStock;
+        private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
