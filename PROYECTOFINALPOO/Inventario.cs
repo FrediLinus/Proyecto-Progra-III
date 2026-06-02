@@ -91,6 +91,13 @@ namespace PROYECTOFINALPOO
                 MessageBox.Show("Registro eliminado correctamente.");
             }
         }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            Menu_Admin menu = new Menu_Admin();
+            menu.Show();
+            this.Hide();
+        }
     }
         
     }

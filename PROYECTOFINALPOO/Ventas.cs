@@ -126,6 +126,19 @@ namespace PROYECTOFINALPOO
                 return;
             }
 
+            int requested = Convert.ToInt32(npCantidadV.Value);
+
+            // calcular cantidad ya agregada en la grilla para este producto
+            int alreadyAdded = dataGridView1.Rows.Cast<DataGridViewRow>()
+                .Where(r => !r.IsNewRow && r.Cells[0].Value != null && r.Cells[0].Value.ToString() == producto.Codigo)
+                .Sum(r => Convert.ToInt32(r.Cells[3].Value));
+
+            if (alreadyAdded + requested > producto.Stock)
+            {
+                MessageBox.Show($"Stock insuficiente. Disponible: {producto.Stock - alreadyAdded}");
+                return;
+            }
+
             dataGridView1.Rows.Add(
                 producto.Codigo,
                 producto.TipoSueter,
@@ -151,6 +164,19 @@ namespace PROYECTOFINALPOO
             if (producto == null)
             {
                 MessageBox.Show("Producto no encontrado.");
+                return;
+            }
+
+            int requested = Convert.ToInt32(npCantidadV.Value);
+
+            // calcular cantidad ya agregada en la grilla para este producto excluyendo la fila que se modifica
+            int alreadyAdded = dataGridView1.Rows.Cast<DataGridViewRow>()
+                .Where((r, i) => !r.IsNewRow && r.Cells[0].Value != null && r.Cells[0].Value.ToString() == producto.Codigo && dataGridView1.Rows.IndexOf(r) != indiceSeleccionado)
+                .Sum(r => Convert.ToInt32(r.Cells[3].Value));
+
+            if (alreadyAdded + requested > producto.Stock)
+            {
+                MessageBox.Show($"Stock insuficiente para la modificación. Disponible: {producto.Stock - alreadyAdded}");
                 return;
             }
 
@@ -181,6 +207,34 @@ namespace PROYECTOFINALPOO
         private void btnVender_Click(object sender, EventArgs e)
         {
             if (!ValidarCamposVentaCliente()) return;
+            // No permitir generar venta si no hay productos agregados
+            if (!dataGridView1.Rows.Cast<DataGridViewRow>().Any(r => !r.IsNewRow))
+            {
+                MessageBox.Show("No hay productos agregados a la venta.");
+                return;
+            }
+
+            // Validar que las cantidades solicitadas no excedan el stock actual
+            var grupos = dataGridView1.Rows.Cast<DataGridViewRow>()
+                .Where(r => !r.IsNewRow && r.Cells[0].Value != null)
+                .GroupBy(r => r.Cells[0].Value.ToString())
+                .Select(g => new { Codigo = g.Key, Cantidad = g.Sum(r => Convert.ToInt32(r.Cells[3].Value)) });
+
+            foreach (var g in grupos)
+            {
+                var prod = DatosSistema.Inventario.FirstOrDefault(x => x.Codigo == g.Codigo);
+                if (prod == null)
+                {
+                    MessageBox.Show($"Producto con código {g.Codigo} no se encontró en inventario.");
+                    return;
+                }
+
+                if (g.Cantidad > prod.Stock)
+                {
+                    MessageBox.Show($"Stock insuficiente para el producto {prod.TipoSueter} talla {prod.Talla}. Disponible: {prod.Stock}, solicitado: {g.Cantidad}.");
+                    return;
+                }
+            }
             decimal total = 0;
 
             string recibo = "========== FUN ENGLISH ==========\n";
@@ -217,6 +271,27 @@ namespace PROYECTOFINALPOO
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information
             );
+
+            // Descontar del inventario las cantidades vendidas
+            foreach (DataGridViewRow fila in dataGridView1.Rows)
+            {
+                if (fila.IsNewRow) continue;
+
+                var codigo = fila.Cells[0].Value?.ToString();
+                if (string.IsNullOrWhiteSpace(codigo)) continue;
+
+                int qty = Convert.ToInt32(fila.Cells[3].Value);
+
+                var prod = DatosSistema.Inventario.FirstOrDefault(x => x.Codigo == codigo);
+                if (prod != null)
+                {
+                    prod.Stock -= qty;
+                    if (prod.Stock < 0) prod.Stock = 0;
+                }
+            }
+
+            // Limpiar la lista de venta
+            dataGridView1.Rows.Clear();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -241,6 +316,14 @@ namespace PROYECTOFINALPOO
 
                 MessageBox.Show("Producto eliminado.");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Menu_Admin menu = new Menu_Admin();
+            menu.Show();
+            this.Hide();
+
         }
     }
 }

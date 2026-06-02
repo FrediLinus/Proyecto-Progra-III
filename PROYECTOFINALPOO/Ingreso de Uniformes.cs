@@ -48,7 +48,7 @@ namespace PROYECTOFINALPOO
             if (!ValidarCamposIngreso()) return;
             Admin nuevo = new Admin();
 
-            nuevo.Codigo = txtCodigo.Text;
+            nuevo.Codigo = txtCodigo.Text;  
             nuevo.Proveedor = txtNomProv.Text;
             nuevo.TipoSueter = cmbTipo.Text;
             nuevo.Talla = cmbTalla.Text;
@@ -190,6 +190,13 @@ namespace PROYECTOFINALPOO
         {
             // Reutiliza la misma validación
             txtPrecioCompra_KeyPress(sender, e);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Menu_Admin menu = new Menu_Admin();
+            menu.Show();
+            this.Hide();
         }
     }
     }
