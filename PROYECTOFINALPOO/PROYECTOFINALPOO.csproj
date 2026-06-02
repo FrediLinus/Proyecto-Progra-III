@@ -103,6 +103,19 @@
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+
+
+    <EmbeddedResource Include="Alumons.resx">
+      <DependentUpon>Alumons.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Asitencia.resx">
+      <DependentUpon>Asitencia.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="ControlNotas.resx">
+      <DependentUpon>ControlNotas.cs</DependentUpon>
+    </EmbeddedResource>
+
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +139,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
@@ -142,6 +156,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo fun.jpeg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
