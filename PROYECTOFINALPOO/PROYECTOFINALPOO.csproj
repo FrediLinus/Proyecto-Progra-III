@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs" />
     <Compile Include="Alumons.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,12 +58,6 @@
     </Compile>
     <Compile Include="Asitencia.Designer.cs">
       <DependentUpon>Asitencia.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Bajas de Uniformes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Bajas de Uniformes.Designer.cs">
-      <DependentUpon>Bajas de Uniformes.cs</DependentUpon>
     </Compile>
     <Compile Include="ControlNotas.cs">
       <SubType>Form</SubType>
@@ -108,9 +103,6 @@
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Bajas de Uniformes.resx">
-      <DependentUpon>Bajas de Uniformes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

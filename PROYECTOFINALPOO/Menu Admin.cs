@@ -23,11 +23,7 @@ namespace PROYECTOFINALPOO
             ingreso_De_Uniformes.Show();
         }
 
-        private void btnBajas_Click(object sender, EventArgs e)
-        {
-            Bajas_de_Uniformes bajas_De_Uniformes = new Bajas_de_Uniformes();
-            bajas_De_Uniformes.Show();
-        }
+
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
@@ -51,6 +47,11 @@ namespace PROYECTOFINALPOO
             Form1 menu = new Form1();
             menu.Show();
             this.Hide();
+        }
+
+        private void Menu_Admin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
