@@ -28,40 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Asitencia));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbCarrera = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.rbPermiso = new System.Windows.Forms.RadioButton();
+            this.rbNo = new System.Windows.Forms.RadioButton();
+            this.rbSi = new System.Windows.Forms.RadioButton();
+            this.cmbEstudiante = new System.Windows.Forms.ComboBox();
             this.cmbCurso = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbCarrera = new System.Windows.Forms.ComboBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbEstudiante = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.rbSi = new System.Windows.Forms.RadioButton();
-            this.rbNo = new System.Windows.Forms.RadioButton();
-            this.rbPermiso = new System.Windows.Forms.RadioButton();
-            this.label5 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.date = new System.Windows.Forms.DateTimePicker();
             this.Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Asistencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox1.Controls.Add(this.date);
+            this.groupBox1.Controls.Add(this.cmbCarrera);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.rbPermiso);
             this.groupBox1.Controls.Add(this.rbNo);
@@ -71,7 +82,6 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cmbCarrera);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(40, 33);
@@ -81,16 +91,83 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingreso de datos";
             // 
-            // cmbCurso
+            // cmbCarrera
             // 
-            this.cmbCurso.FormattingEnabled = true;
-            this.cmbCurso.Items.AddRange(new object[] {
+            this.cmbCarrera.FormattingEnabled = true;
+            this.cmbCarrera.Items.AddRange(new object[] {
+            "4to Computacion",
+            "4to Dibujo",
+            "4to Biologicas",
+            "5to Computacion",
+            "5to Dibujo",
+            "5to Biologicas"});
+            this.cmbCarrera.Location = new System.Drawing.Point(155, 33);
+            this.cmbCarrera.Name = "cmbCarrera";
+            this.cmbCarrera.Size = new System.Drawing.Size(121, 21);
+            this.cmbCarrera.TabIndex = 60;
+            this.cmbCarrera.SelectedIndexChanged += new System.EventHandler(this.cmbCarrera_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(29, 176);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.TabIndex = 59;
+            this.label5.Text = "Asistio";
+            // 
+            // rbPermiso
+            // 
+            this.rbPermiso.AutoSize = true;
+            this.rbPermiso.Location = new System.Drawing.Point(220, 174);
+            this.rbPermiso.Name = "rbPermiso";
+            this.rbPermiso.Size = new System.Drawing.Size(69, 17);
+            this.rbPermiso.TabIndex = 58;
+            this.rbPermiso.TabStop = true;
+            this.rbPermiso.Text = "Permiso";
+            this.rbPermiso.UseVisualStyleBackColor = true;
+            // 
+            // rbNo
+            // 
+            this.rbNo.AutoSize = true;
+            this.rbNo.Location = new System.Drawing.Point(169, 174);
+            this.rbNo.Name = "rbNo";
+            this.rbNo.Size = new System.Drawing.Size(41, 17);
+            this.rbNo.TabIndex = 57;
+            this.rbNo.TabStop = true;
+            this.rbNo.Text = "No";
+            this.rbNo.UseVisualStyleBackColor = true;
+            // 
+            // rbSi
+            // 
+            this.rbSi.AutoSize = true;
+            this.rbSi.Location = new System.Drawing.Point(123, 174);
+            this.rbSi.Name = "rbSi";
+            this.rbSi.Size = new System.Drawing.Size(36, 17);
+            this.rbSi.TabIndex = 56;
+            this.rbSi.TabStop = true;
+            this.rbSi.Text = "Si";
+            this.rbSi.UseVisualStyleBackColor = true;
+            // 
+            // cmbEstudiante
+            // 
+            this.cmbEstudiante.FormattingEnabled = true;
+            this.cmbEstudiante.Items.AddRange(new object[] {
             "XS",
             "S",
             "M",
             "L",
             "XL",
             "XXL"});
+            this.cmbEstudiante.Location = new System.Drawing.Point(155, 109);
+            this.cmbEstudiante.Name = "cmbEstudiante";
+            this.cmbEstudiante.Size = new System.Drawing.Size(121, 21);
+            this.cmbEstudiante.TabIndex = 55;
+            // 
+            // cmbCurso
+            // 
+            this.cmbCurso.FormattingEnabled = true;
             this.cmbCurso.Location = new System.Drawing.Point(155, 72);
             this.cmbCurso.Name = "cmbCurso";
             this.cmbCurso.Size = new System.Drawing.Size(121, 21);
@@ -126,17 +203,6 @@
             this.label4.TabIndex = 48;
             this.label4.Text = "Curso";
             // 
-            // cmbCarrera
-            // 
-            this.cmbCarrera.FormattingEnabled = true;
-            this.cmbCarrera.Items.AddRange(new object[] {
-            "Hoddie Beige 001",
-            "Hoddie Blue  001"});
-            this.cmbCarrera.Location = new System.Drawing.Point(156, 33);
-            this.cmbCarrera.Name = "cmbCarrera";
-            this.cmbCarrera.Size = new System.Drawing.Size(121, 21);
-            this.cmbCarrera.TabIndex = 52;
-            // 
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.DimGray;
@@ -150,6 +216,7 @@
             this.btnRegresar.TabIndex = 67;
             this.btnRegresar.Text = "⬅ Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // btnEliminar
             // 
@@ -164,6 +231,7 @@
             this.btnEliminar.TabIndex = 66;
             this.btnEliminar.Text = " 🗑 Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -178,6 +246,7 @@
             this.btnModificar.TabIndex = 65;
             this.btnModificar.Text = "✏️ Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // dataGridView1
             // 
@@ -195,10 +264,12 @@
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Carrera,
-            this.Curso,
-            this.Nombre,
-            this.Asistencia});
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -212,8 +283,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(82, 258);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(534, 110);
+            this.dataGridView1.Size = new System.Drawing.Size(650, 110);
             this.dataGridView1.TabIndex = 64;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // btnGuardar
             // 
@@ -241,21 +313,6 @@
             this.label1.TabIndex = 62;
             this.label1.Text = "INGRESO DE ASISTENCIAS";
             // 
-            // cmbEstudiante
-            // 
-            this.cmbEstudiante.FormattingEnabled = true;
-            this.cmbEstudiante.Items.AddRange(new object[] {
-            "XS",
-            "S",
-            "M",
-            "L",
-            "XL",
-            "XXL"});
-            this.cmbEstudiante.Location = new System.Drawing.Point(155, 109);
-            this.cmbEstudiante.Name = "cmbEstudiante";
-            this.cmbEstudiante.Size = new System.Drawing.Size(121, 21);
-            this.cmbEstudiante.TabIndex = 55;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -266,72 +323,67 @@
             this.pictureBox1.TabIndex = 68;
             this.pictureBox1.TabStop = false;
             // 
-            // rbSi
+            // errorProvider1
             // 
-            this.rbSi.AutoSize = true;
-            this.rbSi.Location = new System.Drawing.Point(125, 163);
-            this.rbSi.Name = "rbSi";
-            this.rbSi.Size = new System.Drawing.Size(36, 17);
-            this.rbSi.TabIndex = 56;
-            this.rbSi.TabStop = true;
-            this.rbSi.Text = "Si";
-            this.rbSi.UseVisualStyleBackColor = true;
+            this.errorProvider1.ContainerControl = this;
             // 
-            // rbNo
+            // date
             // 
-            this.rbNo.AutoSize = true;
-            this.rbNo.Location = new System.Drawing.Point(171, 163);
-            this.rbNo.Name = "rbNo";
-            this.rbNo.Size = new System.Drawing.Size(41, 17);
-            this.rbNo.TabIndex = 57;
-            this.rbNo.TabStop = true;
-            this.rbNo.Text = "No";
-            this.rbNo.UseVisualStyleBackColor = true;
-            // 
-            // rbPermiso
-            // 
-            this.rbPermiso.AutoSize = true;
-            this.rbPermiso.Location = new System.Drawing.Point(222, 163);
-            this.rbPermiso.Name = "rbPermiso";
-            this.rbPermiso.Size = new System.Drawing.Size(69, 17);
-            this.rbPermiso.TabIndex = 58;
-            this.rbPermiso.TabStop = true;
-            this.rbPermiso.Text = "Permiso";
-            this.rbPermiso.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 165);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
-            this.label5.TabIndex = 59;
-            this.label5.Text = "Asistio";
+            this.date.Location = new System.Drawing.Point(76, 148);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(200, 20);
+            this.date.TabIndex = 61;
             // 
             // Carrera
             // 
             this.Carrera.HeaderText = "Carrera";
             this.Carrera.Name = "Carrera";
-            this.Carrera.ReadOnly = true;
             // 
             // Curso
             // 
             this.Curso.HeaderText = "Curso";
             this.Curso.Name = "Curso";
-            this.Curso.ReadOnly = true;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombres";
             this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
             // 
-            // Asistencia
+            // Column1
             // 
-            this.Asistencia.HeaderText = "Asistencia";
-            this.Asistencia.Name = "Asistencia";
-            this.Asistencia.ReadOnly = true;
+            this.Column1.HeaderText = "Carrera";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Curso";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Nombres";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Apellidos";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Fecha";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Asistencia";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // Asitencia
             // 
@@ -348,10 +400,12 @@
             this.Controls.Add(this.label1);
             this.Name = "Asitencia";
             this.Text = "Asitencia";
+            this.Load += new System.EventHandler(this.Asitencia_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,7 +418,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbCarrera;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnEliminar;
@@ -377,9 +430,17 @@
         private System.Windows.Forms.RadioButton rbPermiso;
         private System.Windows.Forms.RadioButton rbNo;
         private System.Windows.Forms.RadioButton rbSi;
+        private System.Windows.Forms.ComboBox cmbCarrera;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DateTimePicker date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Carrera;
         private System.Windows.Forms.DataGridViewTextBoxColumn Curso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Asistencia;
     }
 }

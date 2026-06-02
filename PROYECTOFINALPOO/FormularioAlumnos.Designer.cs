@@ -35,38 +35,46 @@
             // 
             // btnAlumnos
             // 
-            this.btnAlumnos.Location = new System.Drawing.Point(130, 61);
+            this.btnAlumnos.BackColor = System.Drawing.Color.Orange;
+            this.btnAlumnos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAlumnos.Location = new System.Drawing.Point(50, 386);
             this.btnAlumnos.Name = "btnAlumnos";
-            this.btnAlumnos.Size = new System.Drawing.Size(137, 75);
+            this.btnAlumnos.Size = new System.Drawing.Size(112, 32);
             this.btnAlumnos.TabIndex = 0;
             this.btnAlumnos.Text = "Alumnos";
-            this.btnAlumnos.UseVisualStyleBackColor = true;
+            this.btnAlumnos.UseVisualStyleBackColor = false;
             this.btnAlumnos.Click += new System.EventHandler(this.btnAlumnos_Click);
             // 
             // btnAsistencia
             // 
-            this.btnAsistencia.Location = new System.Drawing.Point(309, 62);
+            this.btnAsistencia.BackColor = System.Drawing.Color.Orange;
+            this.btnAsistencia.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAsistencia.Location = new System.Drawing.Point(361, 386);
             this.btnAsistencia.Name = "btnAsistencia";
-            this.btnAsistencia.Size = new System.Drawing.Size(139, 74);
+            this.btnAsistencia.Size = new System.Drawing.Size(99, 32);
             this.btnAsistencia.TabIndex = 1;
             this.btnAsistencia.Text = "Asistencia";
-            this.btnAsistencia.UseVisualStyleBackColor = true;
+            this.btnAsistencia.UseVisualStyleBackColor = false;
             this.btnAsistencia.Click += new System.EventHandler(this.btnAsistencia_Click);
             // 
             // btnNotas
             // 
-            this.btnNotas.Location = new System.Drawing.Point(502, 62);
+            this.btnNotas.BackColor = System.Drawing.Color.Orange;
+            this.btnNotas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnNotas.Location = new System.Drawing.Point(625, 386);
             this.btnNotas.Name = "btnNotas";
-            this.btnNotas.Size = new System.Drawing.Size(139, 74);
+            this.btnNotas.Size = new System.Drawing.Size(139, 32);
             this.btnNotas.TabIndex = 2;
             this.btnNotas.Text = "Notas";
-            this.btnNotas.UseVisualStyleBackColor = true;
+            this.btnNotas.UseVisualStyleBackColor = false;
             this.btnNotas.Click += new System.EventHandler(this.btnNotas_Click);
             // 
             // FormularioAlumnos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PROYECTOFINALPOO.Properties.Resources.logo_fun;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnNotas);
             this.Controls.Add(this.btnAsistencia);

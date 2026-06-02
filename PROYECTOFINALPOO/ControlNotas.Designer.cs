@@ -28,72 +28,91 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ControlNotas));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbEstudiante = new System.Windows.Forms.ComboBox();
+            this.cmbCarrera = new System.Windows.Forms.ComboBox();
+            this.txtNota = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.cmbCurso = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cmbCarrera = new System.Windows.Forms.ComboBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtNota = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Carrera = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Curso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nota1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nota2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nota3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nota4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Promedio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.groupBox1.Controls.Add(this.cmbCarrera);
             this.groupBox1.Controls.Add(this.txtNota);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.cmbEstudiante);
             this.groupBox1.Controls.Add(this.cmbCurso);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cmbCarrera);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox1.Location = new System.Drawing.Point(43, 31);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(313, 218);
+            this.groupBox1.Size = new System.Drawing.Size(313, 170);
             this.groupBox1.TabIndex = 77;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingreso de datos";
             // 
-            // cmbEstudiante
+            // cmbCarrera
             // 
-            this.cmbEstudiante.FormattingEnabled = true;
-            this.cmbEstudiante.Items.AddRange(new object[] {
-            "XS",
-            "S",
-            "M",
-            "L",
-            "XL",
-            "XXL"});
-            this.cmbEstudiante.Location = new System.Drawing.Point(155, 109);
-            this.cmbEstudiante.Name = "cmbEstudiante";
-            this.cmbEstudiante.Size = new System.Drawing.Size(121, 21);
-            this.cmbEstudiante.TabIndex = 55;
+            this.cmbCarrera.FormattingEnabled = true;
+            this.cmbCarrera.Items.AddRange(new object[] {
+            "4to Computacion",
+            "4to Dibujo",
+            "4to Biologicas",
+            "5to Computacion",
+            "5to Dibujo",
+            "5to Biologicas"});
+            this.cmbCarrera.Location = new System.Drawing.Point(155, 33);
+            this.cmbCarrera.Name = "cmbCarrera";
+            this.cmbCarrera.Size = new System.Drawing.Size(121, 21);
+            this.cmbCarrera.TabIndex = 58;
+            this.cmbCarrera.SelectedIndexChanged += new System.EventHandler(this.cmbCarrera_SelectedIndexChanged);
+            // 
+            // txtNota
+            // 
+            this.txtNota.Location = new System.Drawing.Point(155, 117);
+            this.txtNota.Name = "txtNota";
+            this.txtNota.Size = new System.Drawing.Size(121, 20);
+            this.txtNota.TabIndex = 57;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(30, 117);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(34, 13);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "Nota";
             // 
             // cmbCurso
             // 
@@ -109,16 +128,6 @@
             this.cmbCurso.Name = "cmbCurso";
             this.cmbCurso.Size = new System.Drawing.Size(121, 21);
             this.cmbCurso.TabIndex = 54;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 46;
-            this.label2.Text = "Estudiante";
             // 
             // label3
             // 
@@ -140,17 +149,6 @@
             this.label4.TabIndex = 48;
             this.label4.Text = "Curso";
             // 
-            // cmbCarrera
-            // 
-            this.cmbCarrera.FormattingEnabled = true;
-            this.cmbCarrera.Items.AddRange(new object[] {
-            "Hoddie Beige 001",
-            "Hoddie Blue  001"});
-            this.cmbCarrera.Location = new System.Drawing.Point(156, 33);
-            this.cmbCarrera.Name = "cmbCarrera";
-            this.cmbCarrera.Size = new System.Drawing.Size(121, 21);
-            this.cmbCarrera.TabIndex = 52;
-            // 
             // btnRegresar
             // 
             this.btnRegresar.BackColor = System.Drawing.Color.DimGray;
@@ -164,6 +162,7 @@
             this.btnRegresar.TabIndex = 75;
             this.btnRegresar.Text = "⬅ Regresar";
             this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // btnEliminar
             // 
@@ -178,6 +177,7 @@
             this.btnEliminar.TabIndex = 74;
             this.btnEliminar.Text = " 🗑 Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -192,6 +192,7 @@
             this.btnModificar.TabIndex = 73;
             this.btnModificar.Text = "✏️ Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // dataGridView1
             // 
@@ -212,10 +213,12 @@
             this.Carrera,
             this.Curso,
             this.Nombre,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4});
+            this.Apellidos,
+            this.Nota1,
+            this.Nota2,
+            this.Nota3,
+            this.Nota4,
+            this.Promedio});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.HotTrack;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -231,58 +234,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(741, 110);
             this.dataGridView1.TabIndex = 72;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(85, 372);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(136, 37);
-            this.btnGuardar.TabIndex = 71;
-            this.btnGuardar.Text = "💾 Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Orange;
-            this.label1.Location = new System.Drawing.Point(331, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(160, 21);
-            this.label1.TabIndex = 70;
-            this.label1.Text = "INGRESO DE NOTAS";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(31, 149);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(34, 13);
-            this.label5.TabIndex = 56;
-            this.label5.Text = "Nota";
-            // 
-            // txtNota
-            // 
-            this.txtNota.Location = new System.Drawing.Point(156, 149);
-            this.txtNota.Name = "txtNota";
-            this.txtNota.Size = new System.Drawing.Size(121, 20);
-            this.txtNota.TabIndex = 57;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(454, 49);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(281, 190);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 76;
-            this.pictureBox1.TabStop = false;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Carrera
             // 
@@ -302,29 +254,81 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
-            // Column1
+            // Apellidos
             // 
-            this.Column1.HeaderText = "Nota U1";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
+            this.Apellidos.HeaderText = "Apellidos";
+            this.Apellidos.Name = "Apellidos";
+            this.Apellidos.ReadOnly = true;
             // 
-            // Column2
+            // Nota1
             // 
-            this.Column2.HeaderText = "Nota U2";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.Nota1.HeaderText = "Nota1";
+            this.Nota1.Name = "Nota1";
+            this.Nota1.ReadOnly = true;
             // 
-            // Column3
+            // Nota2
             // 
-            this.Column3.HeaderText = "Nota U3";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
+            this.Nota2.HeaderText = "Nota2";
+            this.Nota2.Name = "Nota2";
+            this.Nota2.ReadOnly = true;
             // 
-            // Column4
+            // Nota3
             // 
-            this.Column4.HeaderText = "Nota U4";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.Nota3.HeaderText = "Nota3";
+            this.Nota3.Name = "Nota3";
+            this.Nota3.ReadOnly = true;
+            // 
+            // Nota4
+            // 
+            this.Nota4.HeaderText = "Nota4";
+            this.Nota4.Name = "Nota4";
+            this.Nota4.ReadOnly = true;
+            // 
+            // Promedio
+            // 
+            this.Promedio.HeaderText = "Promedio";
+            this.Promedio.Name = "Promedio";
+            this.Promedio.ReadOnly = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(85, 372);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(136, 37);
+            this.btnGuardar.TabIndex = 71;
+            this.btnGuardar.Text = "💾 Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Orange;
+            this.label1.Location = new System.Drawing.Point(331, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 21);
+            this.label1.TabIndex = 70;
+            this.label1.Text = "INGRESO DE NOTAS";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(454, 49);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(281, 190);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 76;
+            this.pictureBox1.TabStop = false;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // ControlNotas
             // 
@@ -341,10 +345,12 @@
             this.Controls.Add(this.label1);
             this.Name = "ControlNotas";
             this.Text = "ControlNotas";
+            this.Load += new System.EventHandler(this.ControlNotas_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -353,12 +359,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cmbEstudiante;
         private System.Windows.Forms.ComboBox cmbCurso;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cmbCarrera;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnEliminar;
@@ -368,12 +371,16 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cmbCarrera;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Carrera;
         private System.Windows.Forms.DataGridViewTextBoxColumn Curso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nota1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nota2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nota3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nota4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Promedio;
     }
 }
